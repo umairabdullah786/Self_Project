@@ -1,0 +1,18 @@
+.main{
+    border:0px solid black;
+    height:750px;
+    padding-left:450px;
+}
+.col-form-label {
+    padding-bottom: 30px;
+    color: teal;
+    font-weight: bold;
+}
+.heading h2{
+    padding-top: 60px;
+    padding-left: 120px;
+    padding-bottom: 50px;
+    color: black;
+    font-family: initial;
+    font-weight: bold;
+}

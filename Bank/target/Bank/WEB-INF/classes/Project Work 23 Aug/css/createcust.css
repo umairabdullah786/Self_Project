@@ -1,0 +1,69 @@
+.header{
+    background-color:#fafafa;
+    height:870px;
+
+}
+.main{
+    border:0px solid black;
+    height:750px;
+    padding-left:450px;
+}
+.navbar-toggler-icon{
+    background-color:;
+}
+.navbar{
+    background-color:teal;
+    border:1px solid #dddddd;
+    padding-left: 80px;
+    padding-top: 50px;
+
+}
+.navbar li{
+    padding-left:0px;
+    background-color:;
+    margin-left:5px solid;
+
+}
+.navbar li a{
+    color:black;
+    font-size:19px;
+
+}
+.navbar li:hover{
+    background-color:;
+    border-radius:10px;
+    font-weight:bold;
+    border-bottom:2px solid black;
+}
+.dropdown-menu{
+    background-color:#dddddd;
+    width:230px;
+
+}
+.dropdown-menu a:hover{
+    background:none;
+    border-radius:10px;
+    border-right:2px solid black;
+    font-weight:bold;
+}
+.dropdown-menu a{
+    padding-top:10px;
+    padding-bottom:10px;
+}
+.navbar-nav li{
+    margin-right:40px;
+
+}
+.col-form-label {
+    padding-bottom: 30px;
+    color: teal;
+    font-weight: bold;
+}
+.heading h2{
+    padding-top: 60px;
+    padding-left: 120px;
+    padding-bottom: 50px;
+    color: black;
+    font-family: initial;
+    font-weight: bold;
+}

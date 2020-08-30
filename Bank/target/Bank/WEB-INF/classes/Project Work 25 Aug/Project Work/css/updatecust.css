@@ -1,0 +1,22 @@
+.main{
+    border:0px solid black;
+    height:750px;
+    padding-left:200px;
+}
+.heading h2{
+    padding-top: 60px;
+    padding-left: 400px;
+    padding-bottom: 50px;
+    color: black;
+    font-family: initial;
+    font-weight: bold;
+}
+.col-form-label {
+    padding-left: 80px;
+    padding-bottom: 30px;
+    color: teal;
+    font-weight: bold;
+}
+.updatebtn{
+    padding-left:65px;
+}

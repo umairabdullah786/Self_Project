@@ -1,0 +1,54 @@
+.header{
+    background-color:#fafafa;
+    height:870px;
+
+}
+.footer{
+    border:0px solid black;
+    height:192px;
+    background-color:teal;
+}
+.navbar-toggler-icon{
+    background-color:;
+}
+.navbar{
+    background-color:teal;
+    border:1px solid #dddddd;
+    padding-left: 80px;
+    padding-top: 50px;
+
+}
+.navbar li{
+    padding-left:0px;
+    background-color:;
+    margin-left:5px solid;
+
+}
+.navbar li a{
+    color:black;
+    font-size:19px;
+
+}
+.navbar li:hover{
+    background-color:;
+    border-radius:10px;
+    font-weight:bold;
+    border-bottom:2px solid black;
+}
+.navbar-nav .dropdown-menu{
+    background-color:#dddddd;
+    width:200px;
+}
+.dropdown-menu a:hover{
+    background:none;
+    border-radius:10px;
+    border-right:2px solid black;
+    font-weight:bold;
+}
+.dropdown-menu a{
+    padding-top:10px;
+    padding-bottom:10px;
+}
+.navbar-nav li{
+    margin-right:40px;
+}
