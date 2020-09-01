@@ -9,19 +9,14 @@
 <title>Show All Customer Details</title>
 <%@include file="all_js_css.jsp"%>
 <link rel="stylesheet" type="text/css" href="resources/css/delcust.css">
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 </head>
 <body>
-	<div class="header">
-
-		<!--  Navigation bar -->
-		<%@include file="navBar_2.jsp"%>
-
+	<div class="container mt-3">
 		<div class="main">
 
-			<div class="container">
-				<div class="heading">
+			<div class="container text-center">
 					<h2>Customer Status</h2>
+					<br/>
 				</div>
 				<table id="example"
 					class="table table-striped table-bordered nowrap"
@@ -40,22 +35,23 @@
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach items="${customer }" var="c">
 							<tr>
-								<th scope="row">CutomerID${c.customerid}</th>
-								<td>${c.customerSsdId}</td>
-								<td>${c.name}</td>
-								<td>${c.age}</td>
-								<td>${c.address}</td>
-								<td>${c.city}</td>
-								<td>${c.state}</td>
-								<td>${c.date}</td>
-								<td>${c.status}</td>
+								<th scope="row">CutomerID${customer.customerid}</th>
+								<td>${customer.customerSsdId}</td>
+								<td>${customer.name}</td>
+								<td>${customer.age}</td>
+								<td>${customer.address}</td>
+								<td>${customer.city}</td>
+								<td>${customer.state}</td>
+								<td>${customer.date}</td>
+								<td>${customer.status}</td>
 							</tr>
-						</c:forEach>
 				</table>
 			</div>
-
+			<div class="container text-center">
+						<a href="${pageContext.request.contextPath }/customers_status"
+							class="btn btn-dark btn-lg">Back</a>
+					</div>
 		</div>
 		<div class="footer"></div>
 	</div>

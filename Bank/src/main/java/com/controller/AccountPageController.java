@@ -43,6 +43,14 @@ public class AccountPageController {
 		return "Delete_account";
 	}
 
+	@RequestMapping("/accounts_status")
+	public String allAccountStatus(Model m) {
+
+		List<Account> accounts = accountDAO.getAccounts();
+		m.addAttribute("accounts", accounts);
+		return "accounts_status";
+	}
+	
 	// Handle add account form
 	@RequestMapping(value = "/Account-CreateHandle", method = RequestMethod.POST)
 	public RedirectView handleAccount(@ModelAttribute Account account, HttpServletRequest request) {
@@ -51,12 +59,26 @@ public class AccountPageController {
 		Date datenow = new Date();
 		String s = dateFormat.format(datenow);
 		account.setDate(s);
+		
+		String m1="Account Creation Successfully";
+		String m2="Customer has already "+ account.getAccounttype();
+		
+		int acc=account.getAccountid();
+		String aType = account.getAccounttype();
+		
+		if(acc==0) {
+			account.setMessage(m1);
+		}
+		
+		if(aType!=null){
+			account.setMessage(m2);
+		}
 
 		/*
 		 * Customer customer = new Customer(); customer.getCustomerid();
 		 * 
 		 * account.setCustomer(customer);
-		 */
+		 */	
 
 		System.out.println(account);
 		accountDAO.createAccount(account);

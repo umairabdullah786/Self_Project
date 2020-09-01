@@ -36,7 +36,7 @@
 		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
 		<property name="url" value="jdbc:mysql://localhost:3306/BankDb"/>
 		<property name="username" value="root"/>
-		<property name="password" value="root"/>	
+		<property name="password" value="Umair@786"/>	
 	</bean>
 	
 	

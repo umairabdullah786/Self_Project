@@ -25,6 +25,7 @@ public class CustomerPageController {
 
 	@Autowired
 	private CustomerDAO customerDAO;
+	private Object customer;
 
 	// Show add customer form
 	@RequestMapping("/add-customer")
@@ -75,6 +76,17 @@ public class CustomerPageController {
 		Date datenow = new Date();
 		String s = dateFormat.format(datenow);
 		customer.setDate(s);
+		
+		String m1="Customer Created Successfully";
+		String m2="Customer Updatation Complete";
+		
+		int cust=customer.getCustomerid();
+		
+		if(cust==0) {
+			customer.setMessage(m1);
+		}else {
+			customer.setMessage(m2);
+		}
 
 		System.out.println(customer);
 		customerDAO.createCustomer(customer);
@@ -107,6 +119,15 @@ public class CustomerPageController {
 		Customer customer = this.customerDAO.getCustomer(cid);
 		model.addAttribute("customer", customer);
 		return "update_customer";
+	}
+
+	// view Single Customer handler for customer status
+	@RequestMapping(value = "/viewSingleCustomer/{customerId}",method = RequestMethod.GET)
+	public String viewSingleCustomer(@PathVariable("customerId") int cid, Model model) {
+
+		Customer customer = this.customerDAO.getCustomer(cid);
+		model.addAttribute("customer", customer);
+		return "view_single_customer";
 	}
 
 }

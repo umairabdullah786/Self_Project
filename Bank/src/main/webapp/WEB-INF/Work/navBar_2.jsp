@@ -34,7 +34,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="customers_status">View Customer status</a>
-          <a class="dropdown-item" href="#">View Account status</a>
+          <a class="dropdown-item" href="accounts_status">View Account status</a>
         </div>
       </li>
       <li class="nav-item dropdown">
