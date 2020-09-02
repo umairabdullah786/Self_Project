@@ -53,7 +53,7 @@ public class AccountPageController {
 	
 	// Handle add account form
 	@RequestMapping(value = "/Account-CreateHandle", method = RequestMethod.POST)
-	public RedirectView handleAccount(@ModelAttribute Account account, HttpServletRequest request) {
+	public RedirectView handleAccount(@ModelAttribute Account account, @ModelAttribute Customer customer,HttpServletRequest request) {
 
 		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
 		Date datenow = new Date();
@@ -62,24 +62,35 @@ public class AccountPageController {
 		
 		String m1="Account Creation Successfully";
 		String m2="Customer has already "+ account.getAccounttype();
-		
 		int acc=account.getAccountid();
-		String aType = account.getAccounttype();
+		
+		//For particularly fetching account filed data through customerid assume as it is foreign key but literally field is not available as foreign key so how we can?
+			/*
+			 * int custId=customer.getCustomerid(); Account account2 =
+			 * accountDAO.getAccount(custId);
+			 * 
+			 * String aType = account.getAccounttype();
+			 * int cid = account2.getCid();
+			 * String AType = account2.getAccounttype();
+			 */
+		
 		
 		if(acc==0) {
 			account.setMessage(m1);
 		}
-		
-		if(aType!=null){
-			account.setMessage(m2);
-		}
-
 		/*
-		 * Customer customer = new Customer(); customer.getCustomerid();
-		 * 
-		 * account.setCustomer(customer);
-		 */	
+		 * if(cid==custId) {
+		 *  if(aType==AType){ 
+		 *  account.setMessage(m2); } }
+		 */
 
+		//For saving customerId as customer_customerid foreign key and the corresponding data store like customerId into cid for show customer id on jsp
+		customer.getCustomerid();
+		int x=customer.getCustomerid();
+		
+		account.setCustomer(customer);
+		account.setCid(x);
+		
 		System.out.println(account);
 		accountDAO.createAccount(account);
 		RedirectView redirectView = new RedirectView();

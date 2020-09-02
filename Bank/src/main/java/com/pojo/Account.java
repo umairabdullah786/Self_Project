@@ -17,7 +17,7 @@ public class Account {
 	@GeneratedValue(strategy = GenerationType.AUTO)	
 	private int accountid;
 	
-	private int customerid;
+	private int cid;
 	
 	private String accounttype;
 	
@@ -29,7 +29,7 @@ public class Account {
 
 	private String message;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	private Customer customer;
 
 	public Account() {
@@ -37,11 +37,11 @@ public class Account {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Account(int accountid, int customerid, String accounttype, int balance, String date, String status,
-			String message, Customer customer) {
+	public Account(int accountid, int cid, String accounttype, int balance, String date, String status, String message,
+			Customer customer) {
 		super();
 		this.accountid = accountid;
-		this.customerid = customerid;
+		this.cid = cid;
 		this.accounttype = accounttype;
 		this.balance = balance;
 		this.date = date;
@@ -52,9 +52,9 @@ public class Account {
 
 	@Override
 	public String toString() {
-		return "Account [accountid=" + accountid + ", customerid=" + customerid + ", accounttype=" + accounttype
-				+ ", balance=" + balance + ", date=" + date + ", status=" + status + ", message=" + message
-				+ ", customer=" + customer + "]";
+		return "Account [accountid=" + accountid + ", cid=" + cid + ", accounttype=" + accounttype + ", balance="
+				+ balance + ", date=" + date + ", status=" + status + ", message=" + message + ", customer=" + customer
+				+ "]";
 	}
 
 	public int getAccountid() {
@@ -65,12 +65,12 @@ public class Account {
 		this.accountid = accountid;
 	}
 
-	public int getCustomerid() {
-		return customerid;
+	public int getCid() {
+		return cid;
 	}
 
-	public void setCustomerid(int customerid) {
-		this.customerid = customerid;
+	public void setCid(int cid) {
+		this.cid = cid;
 	}
 
 	public String getAccounttype() {

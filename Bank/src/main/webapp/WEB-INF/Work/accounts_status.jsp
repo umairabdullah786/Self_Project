@@ -39,7 +39,7 @@
 					<tbody>
 						<c:forEach items="${accounts }" var="a">
 							<tr>
-								<th scope="row">CutomerID${a.customerid}</th>
+								<th scope="row">CutomerID${a.cid}</th>
 								<td>${a.accountid}</td>
 								<td>${a.accounttype}</td>
 								<td>${a.status}</td>								
@@ -51,6 +51,7 @@
 				</table>
 			</div>
 		</div>
+		<div class="footer"></div>
 	</div>
 </body>
 </html>
