@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.view.RedirectView;
 
+import com.crude_dao.AccountDAO;
 import com.crude_dao.CustomerDAO;
 import com.pojo.Customer;
 
@@ -25,6 +26,7 @@ public class CustomerPageController {
 
 	@Autowired
 	private CustomerDAO customerDAO;
+	
 	private Object customer;
 
 	// Show add customer form
@@ -81,6 +83,7 @@ public class CustomerPageController {
 		String m2="Customer Updatation Complete";
 		
 		int cust=customer.getCustomerid();
+		
 		
 		if(cust==0) {
 			customer.setMessage(m1);

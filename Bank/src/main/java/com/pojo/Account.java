@@ -57,6 +57,7 @@ public class Account {
 				+ "]";
 	}
 
+
 	public int getAccountid() {
 		return accountid;
 	}
@@ -121,5 +122,7 @@ public class Account {
 		this.customer = customer;
 	}
 	
+	
 
+	
 }

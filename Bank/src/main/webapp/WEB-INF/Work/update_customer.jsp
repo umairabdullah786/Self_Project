@@ -11,6 +11,34 @@
 <link rel="stylesheet" type="text/css" href="resources/css/updatecust.css">
 </head>
 <body>
+
+<script>
+		function random() {
+
+			var a = document.getElementById('input').value;
+			if (a === "Rajasthan") {
+				var array = [ "Kota", "Jaipur" ];
+			} else if (a === "Uttar Pradesh") {
+				var array = [ "Lucknow", "Kanpur", "Aligarh" ];
+			} else if (a === "Madhya Pradesh") {
+				var array = [ "Indore", "Bhopal" ];
+			} else if (a === "Maharashtra") {
+				var array = [ "Mumbai", "Nasik", "Pune" ];
+			} else if (a === "Tamil Nadu") {
+				var array = [ "Chennai", "Coimbatore" ];
+			} else {
+				var array = [];
+			}
+			var string = "";
+			for (i = 0; i < array.length; i++) {
+				string = string + "<option>" + array[i] + "</option>";
+			}
+
+			document.getElementById('output').innerHTML = string;
+		}
+	</script>
+
+
 	<div class="container mt-3">
 		<div class="main">
 			<div class="container text-center">
@@ -84,18 +112,46 @@
 						</div>
 					</div>
 					<div class="form-group row">
-						<label for="city" class="col-sm-2 col-form-label">City</label>
-						<div class="col-sm-3">
-							<input type="text" class="form-control" for="city" name="city"
-								value="${customer.city }" required>
-						</div>
-
-						<label for="state" class="col-sm-2 col-form-label">State</label>
+						<label for="state" class="col-sm-2 col-form-label">Old State</label>
 						<div class="col-sm-3">
 							<input type="text" class="form-control" id="state" name="state"
-								value="${customer.state }" required>
+								value="${customer.state }" disabled>
 						</div>
-					</div>
+						
+						<label for="city" class="col-sm-2 col-form-label">Old City</label>
+						<div class="col-sm-3">
+							<input type="text" class="form-control" for="city" name="city"
+								value="${customer.city }" disabled>
+						</div>
+						
+					</div>	
+			
+			
+			<div class="form-group row">
+				<label class="col-sm-2 col-form-label">New State</label>
+				<div class="col-sm-3">
+					<select class="form-control" name="state" id="input"
+						onchange="random()" required>
+						<option disabled selected value>Select State</option>
+						<option value="Tamil Nadu">Tamil Nadu</option>
+						<option value="Uttar Pradesh">Uttar Pradesh</option>
+						<option value="Rajasthan">Rajasthan</option>
+						<option value="Madhya Pradesh">Madhya Pradesh</option>
+						<option value="Maharashtra">Maharashtra</option>
+					</select>
+				</div>
+			
+	
+				<label class="col-sm-2 col-form-label">New City</label>
+				<div class="col-sm-3">
+					<select class="form-control" name="city" id="output" required>
+					<option disabled selected value>Select City</option>
+					
+					</select>
+				</div>
+			</div>
+			
+				
 					<div class="container text-center">
 						<a href="${pageContext.request.contextPath }/delete-customer"
 							class="btn btn-dark btn-lg">Back</a>
